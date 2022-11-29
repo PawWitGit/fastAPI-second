@@ -3,21 +3,31 @@ from enum import Enum
 
 app = FastAPI()
 
-class ModelName(str, Enum):
-    alexnet = "alexnet"
-    resnet = "resnet"
-    lenet = "lenet"
+
+# ******** -------- ********
+
+# @app.get("/files/{file_path:path}")
+# async def read_file(file_path: str):
+#     return {"file_path": file_path}
 
 
-@app.get("/models/{model_name}")
-async def get_model(model_name: ModelName):
-    if model_name is ModelName.alexnet:
-        return {"model name": model_name, "message": "Deep learning FTW!"}
+ # ******** -------- ********
 
-    if model_name.lenet.value == "lenet":
-        return {"model name": model_name, "message": "LeCNN all the images"}
-
-    return {"model_name": model_name, "message": "Have some residuals"}
+# class ModelName(str, Enum):
+#     alexnet = "alexnet"
+#     resnet = "resnet"
+#     lenet = "lenet"
+#
+#
+# @app.get("/models/{model_name}")
+# async def get_model(model_name: ModelName):
+#     if model_name is ModelName.alexnet:
+#         return {"model name": model_name, "message": "Deep learning FTW!"}
+#
+#     if model_name.lenet.value == "lenet":
+#         return {"model name": model_name, "message": "LeCNN all the images"}
+#
+#     return {"model_name": model_name, "message": "Have some residuals"}
 
 
 # @app.get("/users")
