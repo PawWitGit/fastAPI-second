@@ -14,7 +14,7 @@ async def get_model(model_name: ModelName):
     if model_name is ModelName.alexnet:
         return {"model name": model_name, "message": "Deep learning FTW!"}
 
-    if model_name.value == "lenet":
+    if model_name.lenet.value == "lenet":
         return {"model name": model_name, "message": "LeCNN all the images"}
 
     return {"model_name": model_name, "message": "Have some residuals"}
